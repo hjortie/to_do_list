@@ -13,7 +13,7 @@ const item4 = new Task("Plugga", "Hitta på ett eget projekt som använder Javas
 
 let toDoArray = [item1, item2, item3, item4];
 
-createTaskListHTML(toDoArray);
+createTaskListHTML(toDoArray, theList);
 
 
 console.log(toDoArray)
