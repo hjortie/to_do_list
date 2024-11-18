@@ -1,6 +1,6 @@
 
-
 export function createListItemHTML(ToDoItem) {
+
     const listItemName = document.createElement("li");
     const listItemDescr = document.createElement("p");
     const listItemDeadL = document.createElement("p");
@@ -15,5 +15,6 @@ export function createListItemHTML(ToDoItem) {
     document.getElementById("the_list").appendChild(listItemName);
     listItemName.appendChild(listItemDescr);
     listItemDescr.appendChild(listItemDeadL);
-}
 
+    return listItemName;
+}

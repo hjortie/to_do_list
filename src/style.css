@@ -109,8 +109,10 @@ button:focus-visible {
     font-weight: bold;
     letter-spacing: 0.1rem;
     text-transform: uppercase;
+    cursor: pointer;
   }
-  .task-description {
+  .task-description,
+  .task-deadline {
     font-weight: 400;
     letter-spacing: normal;
     text-transform: none;
