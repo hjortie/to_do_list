@@ -1,4 +1,4 @@
-export class ToDoItem {
+export class Task {
     taskName;
     description;
     deadline;
