@@ -1,12 +1,13 @@
 
-export function createTaskListHTML(taskList, listContainer) {
+export function createTaskListHTML(taskList, listContainer, finishedTasks) {
     listContainer.innerHTML = "";
     for (let i = 0; i < taskList.length; i++) {
-
+        const checker = document.createElement("input")
         const listItemName = document.createElement("li");
         const listItemDescr = document.createElement("p");
         const listItemDeadL = document.createElement("p");
 
+        checker.type = "checkbox";
         listItemName.innerHTML = taskList[i].taskName;
         listItemName.className = "task-name";
         listItemDescr.innerHTML = taskList[i].description;
@@ -14,18 +15,37 @@ export function createTaskListHTML(taskList, listContainer) {
         listItemDeadL.innerHTML = "Ska vara klart senast " + taskList[i].deadline;
         listItemDeadL.className = "task-deadline";
 
+        listItemName.appendChild(checker);
         listContainer.appendChild(listItemName);
         listItemName.appendChild(listItemDescr);
         listItemName.appendChild(listItemDeadL);
 
 
-        //const foundListItemName = createListItemHTML(toDoArray[i]);
-
         listItemName.addEventListener("click", () => {
-            taskList.splice(i, 1);
-            createTaskListHTML(taskList, listContainer)
+            taskList[i].isFinished = checker.checked;
+            const finishedTask = listItemName.parentNode.removeChild(listItemName);
+            // createTaskListHTML(taskList, listContainer);
+            // finishedTasks.appendChild(finishedTask);
+            finishedTask.className = "finished-tasks";
+
+            if (taskList[i].isFinished === true) {
+                finishedTasks.appendChild(listItemName);
+
+
+            }
+            else {
+                listItemName.className = "task-name";
+                listContainer.appendChild(listItemName);
+            }
+            console.log(taskList)
+
         })
 
+
+    }
+    const listHead = document.getElementById("list-header");
+
+    if (taskList.length === 0) {
+        listHead.innerHTML = "OMG alla saker är klara!";
     }
 }
-   // return listItemName;
