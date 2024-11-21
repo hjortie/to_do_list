@@ -19,6 +19,25 @@ let toDoArray = [item1, item2, item3, item4];
 
 createTaskListHTML(toDoArray, theList, allDoneList);
 
+const nameContainer = document.getElementById("user-input-name");
+const descContainer = document.getElementById("user-input-description");
+const dlContainer = document.getElementById("user-input-deadline");
+
+const saveBtn = document.getElementById("save-btn");
+
+saveBtn.addEventListener("click", () => {
+    const newItemName = nameContainer.value;
+    const newItemDesc = descContainer.value;
+    const newItemDL = dlContainer.value;
+
+    let userTask = new Task(newItemName, newItemDesc, newItemDL, false);
+    toDoArray.push(userTask);
+    createTaskListHTML(toDoArray, theList, allDoneList);
+    console.log(toDoArray)
+})
+
+
+
 
 
 

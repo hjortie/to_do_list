@@ -31,7 +31,7 @@ body {
 h1 {
   text-align: center;
   font-size: 3.2em;
-  line-height: 1.1;
+  line-height: 2.1;
   text-decoration: underline;
   text-decoration-style: wavy;
   text-decoration-skip-ink: none;
@@ -42,7 +42,7 @@ h1 {
 h2 {
   text-align: center;
   font-size: 2.2rem;
-  width: 100%;
+  width: 95%;
 }
 
 #app {
@@ -50,7 +50,7 @@ h2 {
   flex-direction: column;
   justify-content: space-evenly;
   gap: 2rem;
-  width: 100%;
+  width: 90%;
   margin: 0 auto;
   padding: 2rem;
 }
@@ -61,10 +61,12 @@ button {
   padding: 0.6em 1.2em;
   font-size: 1em;
   font-weight: 500;
+  align-self: center;
   font-family: inherit;
   background-color: #1a1a1a;
   cursor: pointer;
   transition: border-color 0.25s;
+  width: fit-content;
 }
 button:hover {
   border-color: #646cff;
@@ -77,12 +79,21 @@ button:focus-visible {
 section {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
   margin: 0;
   padding: 0;
   text-align: left;
 
   ul {
     list-style-type: none;
+  }
+
+  label {
+    margin-top: 1.5rem;
+  }
+  input {
+    width: 30%;
   }
 }
 
@@ -95,7 +106,6 @@ input:checked {
   font-weight: bold;
   letter-spacing: 0.1rem;
   text-transform: uppercase;
-  cursor: pointer;
 }
 
 .task-description,
@@ -110,17 +120,25 @@ input:checked {
 }
 
 @media screen and (min-width: 480px) {
+  body {
+    background-image: url(the_scream.png);
+    background-repeat: no-repeat;
+    background-position: center 55%;
+  }
+
   #app {
     flex-direction: row;
     justify-content: space-evenly;
+    align-items: flex-start;
     max-width: 100%;
     padding: 2rem;
     text-align: left;
 
     section {
       display: flex;
+      justify-content: center;
       gap: 2rem;
-      width: calc(25%);
+      width: calc(30%);
 
       li {
         margin-bottom: 2rem;

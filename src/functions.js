@@ -30,18 +30,12 @@ export function createTaskListHTML(taskList, listContainer, finishedTasks) {
 
             if (taskList[i].isFinished === true) {
                 finishedTasks.appendChild(listItemName);
-
-
             }
             else {
                 listItemName.className = "task-name";
                 listContainer.appendChild(listItemName);
             }
-            console.log(taskList)
-
         })
-
-
     }
     const listHead = document.getElementById("list-header");
 
