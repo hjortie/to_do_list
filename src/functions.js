@@ -10,6 +10,7 @@ export function createTaskListHTML(taskList, listContainer, finishedTasks) {
         const listItemDeadL = document.createElement("p");
 
         checker.type = "checkbox";
+        checker.className = "check-input";
         checker.checked = taskList[i].isFinished;
         listItemName.innerHTML = taskList[i].taskName;
         listItemName.className = "task-name";
