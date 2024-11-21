@@ -34,7 +34,12 @@ const descContainer = document.getElementById("user-input-description");
 const dlContainer = document.getElementById("user-input-deadline");
 
 const saveBtn = document.getElementById("save-btn");
-saveBtn.addEventListener("click", () => { saveNewTask(nameContainer, descContainer, dlContainer, toDoArray, theList, allDoneList) });
+saveBtn.addEventListener("click", () => {
+    saveNewTask(new Task(nameContainer.value, descContainer.value, dlContainer.value, false), toDoArray, theList, allDoneList);
+    nameContainer.value = "";
+    descContainer.value = "";
+    dlContainer.value = "";
+});
 
 
 

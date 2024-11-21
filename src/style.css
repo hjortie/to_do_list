@@ -23,12 +23,11 @@ body {
 h1 {
   text-align: center;
   font-size: 3.2em;
-  line-height: 2.1;
   text-decoration: underline;
   text-decoration-style: wavy;
   text-decoration-skip-ink: none;
   text-decoration-thickness: 15%;
-  text-decoration-color: bisque;
+  text-decoration-color: rgb(255, 228, 196);
 }
 
 h2 {
@@ -37,7 +36,7 @@ h2 {
   text-decoration: underline;
   text-decoration-skip-ink: none;
   text-decoration-thickness: 35%;
-  text-decoration-color: bisque;
+  text-decoration-color: rgb(255, 228, 196);
   width: 95%;
 }
 
@@ -95,9 +94,12 @@ section {
 
   label {
     margin-top: 1.5rem;
+    font-size: 1.2em;
   }
   .text-input {
     width: 20%;
+    height: fit-content;
+    font-size: 1rem;
     margin-bottom: 1rem;
   }
 
@@ -146,7 +148,7 @@ input:checked {
       display: flex;
       justify-content: center;
       gap: 2rem;
-      width: calc(30%);
+      width: 35%;
       background-color: rgba(255, 255, 255, 0.6);
 
       li {

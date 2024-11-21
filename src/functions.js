@@ -31,40 +31,35 @@ export function createTaskListHTML(taskList, listContainer, finishedTasks) {
             const deleteBtn = document.createElement("button");
             deleteBtn.innerHTML = "Ta bort";
             deleteBtn.className = "delete-btn";
-            finishedTasks.appendChild(deleteBtn);
+            listItemName.appendChild(deleteBtn);
 
             deleteBtn.addEventListener("click", () => {
                 taskList.splice(i, 1);
                 localStorage.setItem("user_tasks", JSON.stringify(taskList));
-                createTaskListHTML(taskList, listContainer, finishedTasks)
+                createTaskListHTML(taskList, listContainer, finishedTasks);
             });
         }
 
-        else {
-            listItemName.className = "task-name";
-            listContainer.appendChild(listItemName);
-        }
-
         checker.addEventListener("change", () => {
-            if (checker.checked) {
-                taskList[i].isFinished = true;
-                //const finishedTask = listItemName.parentNode.removeChild(listItemName);
-                //finishedTask.className = "finished-tasks";
-                localStorage.setItem("user_tasks", JSON.stringify(taskList));
-                //finishedTasks.appendChild(listItemName);
-                createTaskListHTML(taskList, listContainer, finishedTasks);
-            }
-            else {
-                taskList[i].isFinished = false;
-                listItemName.className = "task-name";
-                listContainer.appendChild(listItemName);
-                localStorage.setItem("user_tasks", JSON.stringify(taskList));
-            }
+            taskList[i].isFinished = checker.checked;
+            localStorage.setItem("user_tasks", JSON.stringify(taskList));
+            createTaskListHTML(taskList, listContainer, finishedTasks);
+
+            // if (checker.checked) {
+
+            // }
+            // else {
+            //     taskList[i].isFinished = false;
+            //     //listItemName.className = "task-name";
+            //     //sortBtn.insertAdjacentElement("beforebegin", listItemName)
+            //     //listContainer.appendChild(listItemName);
+            //     localStorage.setItem("user_tasks", JSON.stringify(taskList));
+            //     createTaskListHTML(taskList, listContainer, finishedTasks);
+            // }
         })
-
-
     }
     const sortBtn = document.createElement("button");
+    sortBtn.id = "sort-btn";
     sortBtn.innerHTML = "Sortera";
     listContainer.appendChild(sortBtn);
 
@@ -74,21 +69,16 @@ export function createTaskListHTML(taskList, listContainer, finishedTasks) {
     })
 }
 
-export function saveNewTask(nameContainer, descContainer, dlContainer, taskList, listContainer, finishedTasks) {
-    const newItemName = nameContainer.value;
-    const newItemDesc = descContainer.value;
-    const newItemDL = dlContainer.value;
-
-    let userTask = new Task(newItemName, newItemDesc, newItemDL, false);
+export function saveNewTask(userTask, taskList, listContainer, finishedTasks) {
     taskList.push(userTask);
     localStorage.setItem("user_tasks", JSON.stringify(taskList));
     createTaskListHTML(taskList, listContainer, finishedTasks);
 }
 
-export function sortTasks(taskList, listContainer, finishedTasks) {
-    taskList.sort((a, b) => a.taskName.localeCompare(b.taskName));
-    createTaskListHTML(taskList, listContainer, finishedTasks);
-}
+// export function sortTasks(taskList, listContainer, finishedTasks) {
+//     taskList.sort((a, b) => a.taskName.localeCompare(b.taskName));
+//     createTaskListHTML(taskList, listContainer, finishedTasks);
+// }
 
 // function deleteTask(taskList, listContainer, finishedTasks) {
 //     taskList.splice(i, 1);
