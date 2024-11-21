@@ -1,6 +1,6 @@
 import "./style.css";
 import { Task } from "./models/Tasks";
-import { createTaskListHTML } from "./functions";
+import { createTaskListHTML, saveNewTask } from "./functions";
 
 const theList = document.createElement("ul");
 theList.id = "the_list";
@@ -24,17 +24,7 @@ const descContainer = document.getElementById("user-input-description");
 const dlContainer = document.getElementById("user-input-deadline");
 
 const saveBtn = document.getElementById("save-btn");
-
-saveBtn.addEventListener("click", () => {
-    const newItemName = nameContainer.value;
-    const newItemDesc = descContainer.value;
-    const newItemDL = dlContainer.value;
-
-    let userTask = new Task(newItemName, newItemDesc, newItemDL, false);
-    toDoArray.push(userTask);
-    createTaskListHTML(toDoArray, theList, allDoneList);
-    console.log(toDoArray)
-})
+saveBtn.addEventListener("click", () => { saveNewTask(nameContainer, descContainer, dlContainer, toDoArray, theList, allDoneList) });
 
 
 

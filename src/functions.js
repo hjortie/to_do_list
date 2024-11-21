@@ -1,3 +1,4 @@
+import { Task } from "./models/Tasks";
 
 export function createTaskListHTML(taskList, listContainer, finishedTasks) {
     listContainer.innerHTML = "";
@@ -21,11 +22,9 @@ export function createTaskListHTML(taskList, listContainer, finishedTasks) {
         listItemName.appendChild(listItemDeadL);
 
 
-        listItemName.addEventListener("click", () => {
+        checker.addEventListener("change", () => {
             taskList[i].isFinished = checker.checked;
             const finishedTask = listItemName.parentNode.removeChild(listItemName);
-            // createTaskListHTML(taskList, listContainer);
-            // finishedTasks.appendChild(finishedTask);
             finishedTask.className = "finished-tasks";
 
             if (taskList[i].isFinished === true) {
@@ -37,9 +36,19 @@ export function createTaskListHTML(taskList, listContainer, finishedTasks) {
             }
         })
     }
-    const listHead = document.getElementById("list-header");
+}
 
-    if (taskList.length === 0) {
-        listHead.innerHTML = "OMG alla saker är klara!";
-    }
+export function saveNewTask(nameContainer, descContainer, dlContainer, taskList, listContainer, finishedTasks) {
+    const newItemName = nameContainer.value;
+    const newItemDesc = descContainer.value;
+    const newItemDL = dlContainer.value;
+
+    let userTask = new Task(newItemName, newItemDesc, newItemDL, false);
+    taskList.push(userTask);
+    createTaskListHTML(taskList, listContainer, finishedTasks);
+}
+
+export function sortFunction(taskList, listContainer, finishedTasks) {
+    taskList.sort((a, b) => a.taskName.localeCompare(b.taskName));
+    createTaskListHTML(taskList, listContainer, finishedTasks);
 }
