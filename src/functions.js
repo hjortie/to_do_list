@@ -30,7 +30,7 @@ export function createTaskListHTML(taskList, listContainer, finishedTasks) {
 
             const deleteBtn = document.createElement("button");
             deleteBtn.innerHTML = "Ta bort";
-            deleteBtn.className = "delete-btn";
+            deleteBtn.className = "btn--delete";
             listItemName.appendChild(deleteBtn);
 
             deleteBtn.addEventListener("click", () => {
@@ -44,23 +44,11 @@ export function createTaskListHTML(taskList, listContainer, finishedTasks) {
             taskList[i].isFinished = checker.checked;
             localStorage.setItem("user_tasks", JSON.stringify(taskList));
             createTaskListHTML(taskList, listContainer, finishedTasks);
-
-            // if (checker.checked) {
-
-            // }
-            // else {
-            //     taskList[i].isFinished = false;
-            //     //listItemName.className = "task-name";
-            //     //sortBtn.insertAdjacentElement("beforebegin", listItemName)
-            //     //listContainer.appendChild(listItemName);
-            //     localStorage.setItem("user_tasks", JSON.stringify(taskList));
-            //     createTaskListHTML(taskList, listContainer, finishedTasks);
-            // }
         })
     }
     const sortBtn = document.createElement("button");
-    sortBtn.id = "sort-btn";
-    sortBtn.innerHTML = "Sortera";
+    sortBtn.id = "btn--sort";
+    sortBtn.innerHTML = "Sortera A-Ö";
     listContainer.appendChild(sortBtn);
 
     sortBtn.addEventListener("click", () => {
@@ -75,13 +63,3 @@ export function saveNewTask(userTask, taskList, listContainer, finishedTasks) {
     createTaskListHTML(taskList, listContainer, finishedTasks);
 }
 
-// export function sortTasks(taskList, listContainer, finishedTasks) {
-//     taskList.sort((a, b) => a.taskName.localeCompare(b.taskName));
-//     createTaskListHTML(taskList, listContainer, finishedTasks);
-// }
-
-// function deleteTask(taskList, listContainer, finishedTasks) {
-//     taskList.splice(i, 1);
-//     localStorage.setItem("user_tasks", JSON.stringify(taskList));
-//     createTaskListHTML(taskList, listContainer, finishedTasks)
-// }
