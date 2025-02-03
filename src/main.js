@@ -1,4 +1,3 @@
-import "./style.css";
 import { Task } from "./models/Tasks";
 import { createTaskListHTML, saveNewTask } from "./functions";
 
