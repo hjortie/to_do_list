@@ -1,5 +1,3 @@
-import { Task } from "./models/Tasks";
-
 export function createTaskListHTML(taskList, listContainer, finishedTasks) {
     listContainer.innerHTML = "";
     finishedTasks.innerHTML = "";
