@@ -1,5 +1,5 @@
-import { Task } from "./models/Tasks";
-import { createTaskListHTML, saveNewTask } from "./functions";
+import { Task } from "./models/Tasks.js";
+import { createTaskListHTML, saveNewTask } from "./functions.js";
 
 const theList = document.createElement("ul");
 theList.id = "the_list";
