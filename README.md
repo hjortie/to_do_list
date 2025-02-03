@@ -1,4 +1,4 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/DLAASBwY)
+
 # Inlämningsuppgift Todo
 
 I denna inlämningsuppgift kommer ni att skapa er egen todo-lista.
@@ -19,25 +19,3 @@ Sidan skall visa ett antal punkter som skall göras. Dessa skall då komma upp p
 - Skapa ett formulär som tillåter att en användare skapar nya todos efterhand.
 - Kunna sortera ordningen på dina todos
 - Ha en bra struktur angående styling i ert projekt. Använd den kunskap ni fått i tidigare kurser vad gäller css eller scss.
-
-## Allmänt
-
-Projektet ni har är ett vite-projekt. D.v.s. ni måste köra:
-
-```shell
-npm i
-```
-
-och
-
-```shell
-npm run dev 
-```
-
-för att köra projektet.
-
-- Det finns många sätt att lösa denna uppgift på. Om ni känner er osäkra på någonting, fråga hellre någon gång för mycket så att ni känner er säkra på vad ni utvecklar.
-- Ni får gärna ändra strukturen i projektet, detta är bara en grund.
-- Börja med att planera ert arbete, börja inte med Visual Studio Code, även om det är lockande.
-- Gör ert bästa att inte stressa. Lättare sagt än gjort, jag vet. Men ingen mår bättre av att stressa.
-- Ha roligt, skratta när det blir fel och fortsätt att vara nyfiken :)
